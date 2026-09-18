@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Coffee House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Логотип-картинка -->
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Resource Coffee House">
+            </a>
+            
+            <!-- Навигационное меню -->
+            <ul class="nav-list">
+                <li><a href="#favorite">Favorite coffee</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#mobile">Mobile app</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+
+            <!-- Правая часть: тема и кнопка меню -->
+            <div class="nav-right">
+                <div class="theme-switch">☀️🌙</div>
+                <a href="#menu" class="menu-link">Menu ☕</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Enjoy premium coffee at our charming cafe</h1>
+                <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+                <a href="#menu" class="btn">Menu</a>
+            </div>
+        </section>
+
+    <!-- Секция выбора любимого кофе -->
+        <section class="favorite" id="favorite">
+            <h2>Choose your favorite coffee</h2>
+            <div class="slider-container">
+                <button class="slider-btn prev">←</button>
+                <div class="coffee-card">
+                    <img src="coffee-drink.png" alt="S’mores Frappuccino">
+                    <h3>S’mores Frappuccino</h3>
+                    <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                    <span class="price">$5.50</span>
+                </div>
+                <button class="slider-btn next">→</button>
+            </div>
+        </section>
+
+        <!-- Секция «О нас» (About) -->
+        <section class="about" id="about">
+            <p class="about-text">
+                Resource is <em>the perfect and cozy place</em> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
+            </p>
+            <div class="about-grid">
+                <img src="about-1.jpg" alt="Woman enjoying coffee in a cozy cafe">
+                <img src="about-2.jpg" alt="Man working on a laptop with coffee">
+                <img src="about-3.jpg" alt="Atmospheric coffee cup with lights">
+                <img src="about-4.jpg" alt="Couple drinking coffee together">
+            </div>
+        </section>
+
+        <!-- Секция мобильного приложения (Mobile app) -->
+        <section class="mobile-app" id="mobile">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Download <em>our app</em> to start ordering</h2>
+                    <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are</p>
+                    <div class="app-buttons">
+                        <a href="#" class="store-btn">
+                            <img src="app-store.png" alt="Available on the App Store">
+                        </a>
+                        <a href="#" class="store-btn">
+                            <img src="google-play.png" alt="Available on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-images">
+                    <img src="phones-mockup.png" alt="Resource Mobile App Mockup on smartphones">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+        <!-- Подвал сайта (Footer) -->
+        <footer class="footer" id="contact">
+            <div class="footer-left">
+                <h2>Sip, Savor, Smile.</h2>
+                <p class="footer-subtitle">It’s coffee time!</p>
+                <div class="socials">
+                    <a href="#" class="social-icon"><img src="twitter.svg" alt="Twitter"></a>
+                    <a href="#" class="social-icon"><img src="instagram.svg" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="facebook.svg" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>Contact us</h3>
+                <p>📍 8558 Green Rd., LA</p>
+                <p>📞 +1 (603) 555-0123</p>
+                <p>🕒 Mon–Sat: 9:00–23:00</p>
+            </div>
+        </footer>
+
+</body>
+</html>        
