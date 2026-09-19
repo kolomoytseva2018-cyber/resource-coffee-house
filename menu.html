@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Resource Coffee House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Логотип ведет на главную -->
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Resource Coffee House">
+            </a>
+            
+            <!-- Навигационное меню (ссылки ведут на секции главной страницы) -->
+            <ul class="nav-list">
+                <li><a href="index.html#favorite">Favorite coffee</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#mobile">Mobile app</a></li>
+                <li><a href="index.html#contact">Contact us</a></li>
+            </ul>
+
+            <!-- Правая часть: тема и кнопка меню -->
+            <div class="nav-right">
+                <div class="theme-switch">☀️🌙</div>
+                <a href="menu.html" class="menu-link active">Menu ☕</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Основной контент страницы меню -->
+    <main>
+        <!-- Заголовок секции меню -->
+        <section class="menu-header">
+            <h1>Behind each of our cups hides an <em>amazing surprise</em></h1>
+            
+            <!-- Кнопки переключения категорий -->
+            <div class="category-buttons">
+                <button class="cat-btn active">☕ Coffee</button>
+                <button class="cat-btn">🫖 Tea</button>
+                <button class="cat-btn">🍰 Dessert</button>
+            </div>
+        </section>
+
+        <!-- Сетка товаров (каталог кофе) -->
+        <section class="menu-catalog" id="coffee-section">
+            <div class="catalog-grid">
+                
+                <!-- Карточка 1: Irish coffee -->
+                <div class="menu-card">
+                    <img src="irish-coffee.jpg" alt="Irish coffee">
+                    <div class="card-info">
+                        <h3>Irish coffee</h3>
+                        <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk.</p>
+                        <span class="price">$7.00</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Kahlua coffee -->
+                <div class="menu-card">
+                    <img src="kahlua-coffee.jpg" alt="Kahlua coffee">
+                    <div class="card-info">
+                        <h3>Kahlua coffee</h3>
+                        <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk.</p>
+                        <span class="price">$7.00</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Honey raf -->
+                <div class="menu-card">
+                    <img src="honey-raf.jpg" alt="Honey raf">
+                    <div class="card-info">
+                        <h3>Honey raf</h3>
+                        <p>Espresso with frothed milk, cream and aromatic honey.</p>
+                        <span class="price">$5.50</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Ice cappuccino -->
+                <div class="menu-card">
+                    <img src="ice-cappuccino.jpg" alt="Ice cappuccino">
+                    <div class="card-info">
+                        <h3>Ice cappuccino</h3>
+                        <p>Cappuccino with soft thick foam in summer version with ice.</p>
+                        <span class="price">$5.00</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Espresso -->
+                <div class="menu-card">
+                    <img src="espresso.jpg" alt="Espresso">
+                    <div class="card-info">
+                        <h3>Espresso</h3>
+                        <p>Classic black coffee</p>
+                        <span class="price">$4.50</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Latte -->
+                <div class="menu-card">
+                    <img src="latte.jpg" alt="Latte">
+                    <div class="card-info">
+                        <h3>Latte</h3>
+                        <p>Espresso coffee with the addition of steamed milk and dense milk foam.</p>
+                        <span class="price">$5.50</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 7: Latte macchiato -->
+                <div class="menu-card">
+                    <img src="latte-macchiato.jpg" alt="Latte macchiato">
+                    <div class="card-info">
+                        <h3>Latte macchiato</h3>
+                        <p>Espresso with frothed milk and chocolate.</p>
+                        <span class="price">$5.50</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 8: Coffee with cognac -->
+                <div class="menu-card">
+                    <img src="coffee-with-cognac.jpg" alt="Coffee with cognac">
+                    <div class="card-info">
+                        <h3>Coffee with cognac</h3>
+                        <p>Fragrant black coffee with cognac and whipped cream.</p>
+                        <span class="price">$6.50</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта (Footer) -->
+    <footer class="footer" id="contact">
+        <div class="footer-left">
+            <h2>Sip, Savor, Smile.</h2>
+            <p class="footer-subtitle">It’s coffee time!</p>
+            <div class="socials">
+                <a href="#" class="social-icon"><img src="twitter.svg" alt="Twitter"></a>
+                <a href="#" class="social-icon"><img src="instagram.svg" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="facebook.svg" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Contact us</h3>
+            <p>📍 8558 Green Rd., LA</p>
+            <p>📞 +1 (603) 555-0123</p>
+            <p>🕒 Mon–Sat: 9:00–23:00</p>
+        </div>
+    </footer>
+
+</body>
+</html>
