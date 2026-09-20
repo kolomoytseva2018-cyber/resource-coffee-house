@@ -232,6 +232,81 @@ img {
 }
 
 /* ==========================
+   MOBILE APP SECTION
+   ========================== */
+
+.mobile-app {
+    background-color: var(--container-bg);
+    border-radius: 40px;
+    padding: 100px;
+}
+
+
+.app-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+/* Левая часть */
+
+.app-info {
+    width: 50%;
+}
+
+
+.app-info h2 {
+    font-size: 60px;
+    line-height: 125%;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+
+.app-info h2 em {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+
+.app-info p {
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+
+/* Кнопки */
+
+.app-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+
+.store-btn img {
+    width: 200px;
+    height: auto;
+}
+
+
+/* Правая часть */
+
+.app-images {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.app-images img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* ==========================
    ПОДВАЛ (FOOTER)
    ========================== */
 .footer {
@@ -241,26 +316,40 @@ img {
     border-radius: 40px;
     padding: 80px;
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start;
+    gap: 100px;
     margin-bottom: 0; /* Отступ снизу до края экрана (40px) уже задан в body.padding */
 }
 
 .footer-left {
-    max-width: 530px;
+    width: 50%;
 }
 
 .footer-left h2 {
-    font-size: 40px;
+   font-size: 60px;
     font-weight: 600;
-    margin: 0 0 10px 0;
+    line-height: 20%;
+    margin-bottom: 10px;
 }
 
 .footer-subtitle {
-    font-size: 24px;
-    color: var(--accent-color);
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 20%;
     font-style: italic;
-    margin: 0 0 40px 0;
+    color: var(--accent-color);
+}
+
+.footer-right p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.footer-right img {
+    width: 18px;
+    height: 18px;
 }
 
 .socials {
@@ -284,44 +373,28 @@ img {
 }
 
 .footer-right {
-    max-width: 400px;
+    width: 30%;
 }
 
 .footer-right h3 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
-    margin: 0 0 30px 0;
+    line-height: 100%;
+    margin-bottom: 32px;
 }
 
 .footer-right p {
-    font-size: 16px;
-    margin: 0 0 15px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
     opacity: 0.9;
 }
 
-/* ==========================
-   АДАПТИВНОСТЬ (МОБИЛЬНЫЕ)
-   ========================== */
-@media (max-width: 768px) {
-    body {
-        padding: 10px 20px 20px 20px;
-    }
-    
-    .nav-list {
-        display: none; /* На мобилках скрываем десктопное меню */
-    }
-
-    .hero-title {
-        font-size: 42px;
-    }
-
-    .footer {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-}
-
-/* Верхняя ссылка в Hero-блоке (ведет себя как кнопка Menu в шапке с подчеркиванием) */
+/* Верхняя ссылка в Hero-блоке Link (ведет себя как кнопка Menu в шапке с подчеркиванием) */
 .hero-link-top {
     display: inline-flex;
     align-items: center;
@@ -376,35 +449,9 @@ img {
 }
 
 /* ==========================
-   СТИЛИ СЕКЦИИ FAVORITE COFFEE
-   ========================== */
-
-.favorite {
-    width: 100%;
-    margin-bottom: 100px;
-    text-align: center;
-}
-
-.favorite h2 {
-    font-size: 60px;
-    font-weight: 600;
-    line-height: 125%;
-    margin-bottom: 60px;
-    color: var(--text-primary);
-}
-
-/* Выделение слова favorite курсивом и акцентным цветом */
-.favorite h2 .accent {
-    font-style: italic;
-    color: var(--accent-color);
-}
-
-/* ==========================
    СЕКЦИЯ FAVORITE COFFEE (ФЛЕКС-СЛАЙДЕР)
    ========================== */
 .favorite {
-    width: 100%;
-    margin-bottom: 100px;
     text-align: center;
 }
 
@@ -529,17 +576,138 @@ img {
     background-color: var(--text-primary);
 }
 
+/* ==========================
+   ABOUT SECTION
+   ========================== */
+
+.about {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+/* Текст блока */
+
+.about-text {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    margin: 0 0 40px 0;
+    color: var(--text-primary);
+}
+
+
+.about-text em {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+
+/* Галерея */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+
+/* Каждая колонка отдельно */
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* Фото */
+
+.about-column img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+/* Левая колонка */
+
+.left-column img:first-child {
+    aspect-ratio: 660 / 590;
+}
+
+.left-column img:last-child {
+    aspect-ratio: 660 / 430;
+}
+
+
+/* Правая колонка */
+
+.right-column {
+    padding-top: 0;
+}
+
+.right-column img:first-child {
+    aspect-ratio: 660 / 430;
+}
+
+.right-column img:last-child {
+    aspect-ratio: 660 / 590;
+}
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    .slider-container {
-        gap: 20px; /* Уменьшаем отступ на мобилках */
-    }
-    .slider-btn {
+
+    .slider-btn { /* Слайдер 2 блок */
         width: 40px;
         height: 40px;
         font-size: 16px;
     }
-    .coffee-card img {
+    .coffee-card img { /* Картинка напитка на слайдере 2 блок */
         height: 320px;
+    }
+}
+
+@media (max-width: 768px) { /* Заголовок блок 2 */
+
+    .about-text {
+        font-size: 32px;
+    }
+
+
+    .about-grid { /* Меняет 2 колонки */
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.about-column { /* Расстояние между фото */
+    gap: 20px;
+}
+
+.about-column img { /* Радиус */
+    border-radius: 24px;
+}
+
+}
+
+/* ==========================
+   АДАПТИВНОСТЬ (МОБИЛЬНЫЕ)
+   ========================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 20px 20px 20px;
+    }
+    
+    .nav-list {
+        display: none; /* На мобилках скрываем десктопное меню */
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 40px 20px;
     }
 }
