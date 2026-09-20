@@ -1,0 +1,545 @@
+/* ==========================
+   БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+   ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --text-primary: #403F3D;
+    --text-inverse: #E1D4C9;
+    --accent-color: #B0907A;
+    --bg-color: #E1D4C9;
+    --card-bg: #665F55;
+    --overlay-bg: rgba(64, 63, 61, 0.8);
+    --border-primary: #C1B6AD;
+    --border-inverse: #665F55;
+    --footer-bg: #665F55;
+    --footer-text: #E1D4C9;
+}
+
+.dark-theme {
+    --text-primary: #E1D4C9;
+    --text-inverse: #E1D4C9;
+    --accent-color: #B0907A;
+    --bg-color: #292826;
+    --card-bg: #403F3D;
+    --overlay-bg: rgba(41, 40, 38, 0.8);
+    --border-primary: #665F55;
+    --border-inverse: #C1B6AD;
+    --footer-bg: #403F3D;
+    --footer-text: #E1D4C9;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* Сверху 20px (до шапки), по бокам 40px, снизу 40px (от футера до края) */
+    padding: 20px 40px 40px 40px;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Типографика */
+h1, .heading-1 { font-size: 72px; font-weight: 600; line-height: 105%; }
+h2, .heading-2 { font-size: 60px; font-weight: 600; line-height: 125%; }
+h3, .heading-3 { font-size: 24px; font-weight: 600; line-height: 125%; }
+h1 em, h2 em, .accent { font-style: italic; }
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================
+   ШАПКА (HEADER)
+   ========================== */
+.header {
+    width: 100%;
+    margin-bottom: 20px; /* 20px от шапки до Hero-блока */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 100px; 
+    display: block;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Переключатель темы */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 30px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.theme-option {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme-option.active {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Кнопка Меню в шапке */
+.menu-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.menu-link-btn:hover {
+    color: var(--accent-color);
+}
+
+.menu-link-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.menu-link-btn:hover::after {
+    width: 100%;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ==========================
+   ГЛАВНЫЙ БЛОК (HERO)
+   ========================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 640px;
+    background-image: url('img-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    margin-bottom: 100px; /* Ровно 100px от Hero до следующего блока */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 530px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.hero-title {
+    font-size: 60px;
+    line-height: 1.05;
+    font-weight: 600;
+    margin: 0 0 40px 0;
+}
+
+/* ==========================
+   ОСТАЛЬНЫЕ СЕКЦИИ (.favorite, .about, .mobile-app)
+   ========================== */
+.favorite,
+.about,
+.mobile-app {
+    width: 100%;
+    margin-bottom: 100px; /* Строго 100px между всеми блоками */
+}
+
+/* ==========================
+   ПОДВАЛ (FOOTER)
+   ========================== */
+.footer {
+    width: 100%;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-radius: 40px;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 0; /* Отступ снизу до края экрана (40px) уже задан в body.padding */
+}
+
+.footer-left {
+    max-width: 530px;
+}
+
+.footer-left h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.footer-subtitle {
+    font-size: 24px;
+    color: var(--accent-color);
+    font-style: italic;
+    margin: 0 0 40px 0;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 54px;
+    height: 54px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+}
+
+.footer-right {
+    max-width: 400px;
+}
+
+.footer-right h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+}
+
+.footer-right p {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    opacity: 0.9;
+}
+
+/* ==========================
+   АДАПТИВНОСТЬ (МОБИЛЬНЫЕ)
+   ========================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 20px 20px 20px;
+    }
+    
+    .nav-list {
+        display: none; /* На мобилках скрываем десктопное меню */
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+}
+
+/* Верхняя ссылка в Hero-блоке (ведет себя как кнопка Menu в шапке с подчеркиванием) */
+.hero-link-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #403F3D; /* Белый цвет на фоне картинки */
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 20px;
+    transition: color 0.2s ease;
+}
+
+.hero-link-top:hover {
+    color: var(--accent-color);
+}
+
+.hero-link-top::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.hero-link-top:hover::after {
+    width: 100%;
+}
+
+/* Большая кнопка Menu внизу Hero-блока (200x64px) */
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 64px;
+    background-color: #E1D4C9; /* Цвет капсулы из макета */
+    color: #403F3D;
+    border-radius: 30px; /* Плавное скругление по краям */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero-btn:hover {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+/* ==========================
+   СТИЛИ СЕКЦИИ FAVORITE COFFEE
+   ========================== */
+
+.favorite {
+    width: 100%;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.favorite h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+}
+
+/* Выделение слова favorite курсивом и акцентным цветом */
+.favorite h2 .accent {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+/* ==========================
+   СЕКЦИЯ FAVORITE COFFEE (ФЛЕКС-СЛАЙДЕР)
+   ========================== */
+.favorite {
+    width: 100%;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.favorite h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+}
+
+.favorite h2 .accent {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+/* Выстраиваем кнопки и карточку в ряд по центру */
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Карточка напитка */
+.coffee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.coffee-card img {
+    height: 460px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+.coffee-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.coffee-card p {
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 440px;
+    margin: 0 auto 20px auto;
+    opacity: 0.85;
+    color: var(--text-primary);
+}
+
+.coffee-card .price {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+/* Кнопки слайдера  */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 60px;
+    height: 60px;
+
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    color: var(--text-primary);
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+.slider-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Индикаторы слайдера (3 полоски внизу) */
+.slider-pagination {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-pagination .bullet {
+    width: 40px;
+    height: 4px;
+    background-color: var(--border-primary);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-pagination .bullet.active {
+    background-color: var(--text-primary);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .slider-container {
+        gap: 20px; /* Уменьшаем отступ на мобилках */
+    }
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .coffee-card img {
+        height: 320px;
+    }
+}

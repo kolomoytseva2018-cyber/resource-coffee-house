@@ -15,7 +15,7 @@
         <nav class="nav">
             <!-- Логотип-картинка -->
             <a href="#" class="logo">
-                <img src="logo.png" alt="Resource Coffee House">
+                <img src="logo.svg" alt="Resource Coffee House">
             </a>
             
             <!-- Навигационное меню -->
@@ -26,38 +26,72 @@
                 <li><a href="#contact">Contact us</a></li>
             </ul>
 
-            <!-- Правая часть: тема и кнопка меню -->
-            <div class="nav-right">
-                <div class="theme-switch">☀️🌙</div>
-                <a href="#menu" class="menu-link">Menu ☕</a>
-            </div>
+    <!-- Правая часть: тема и кнопка меню -->
+<div class="header-right">
+    <!-- Переключатель темы (солнце и луна) -->
+    <div class="theme-switch">
+        <button class="theme-option active" aria-label="Light mode">
+            <!-- Иконка солнца -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="theme-option" aria-label="Dark mode">
+            <!-- Иконка луны -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+    </div>
+
+    <!-- Кнопка меню с чашечкой -->
+    <a href="menu.html" class="menu-link-btn">
+        Menu
+        <img src="Menu cup.svg" alt="Cup" class="menu-icon">
+    </a>
+</div>
         </nav>
     </header>
 
-    <!-- Главный экран (Hero) -->
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Enjoy premium coffee at our charming cafe</h1>
-                <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
-                <a href="#menu" class="btn">Menu</a>
-            </div>
-        </section>
+        <!-- Главный экран (Hero) -->
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <!-- Верхняя ссылка с иконкой чашечки -->
+                    <a href="menu.html" class="hero-link-top">
+                        Link <img src="Menu cup.svg" alt="Cup" class="menu-icon">
+                    </a>
+            
+                     <h1 class="hero-title">Enjoy premium<br>coffee at our<br>charming cafe</h1>
+            
+                     <!-- Большая кнопка Menu размером 200x64px -->
+                    <a href="menu.html" class="hero-btn">Menu</a>
+                </div>
+            </section>
 
     <!-- Секция выбора любимого кофе -->
-        <section class="favorite" id="favorite">
-            <h2>Choose your favorite coffee</h2>
-            <div class="slider-container">
-                <button class="slider-btn prev">←</button>
-                <div class="coffee-card">
-                    <img src="coffee-drink.png" alt="S’mores Frappuccino">
-                    <h3>S’mores Frappuccino</h3>
-                    <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                    <span class="price">$5.50</span>
-                </div>
-                <button class="slider-btn next">→</button>
+<section class="favorite">
+    <h2>Choose your <em class="accent">favorite</em> coffee</h2>
+
+    <div class="slider-container">
+        <!-- Кнопка «Назад» -->
+        <button class="slider-btn prev" aria-label="Previous slide">&#8592;</button>
+
+        <!-- Карточка напитка -->
+        <div class="coffee-card">
+            <img src="coffee-slider-1.png" alt="S'mores Frappuccino">
+            <h3>S'mores Frappuccino</h3>
+            <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+            <div class="price">$5.50</div>
+
+            <!-- Индикаторы слайдера (3 полоски) -->
+            <div class="slider-pagination">
+                <span class="bullet active"></span>
+                <span class="bullet"></span>
+                <span class="bullet"></span>
             </div>
-        </section>
+        </div>
+
+        <!-- Кнопка «Вперед» -->
+        <button class="slider-btn next" aria-label="Next slide">&#8594;</button>
+    </div>
+</section>
 
         <!-- Секция «О нас» (About) -->
         <section class="about" id="about">
