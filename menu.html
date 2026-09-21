@@ -24,10 +24,25 @@
                 <li><a href="index.html#contact">Contact us</a></li>
             </ul>
 
-            <!-- Правая часть: тема и кнопка меню -->
-            <div class="nav-right">
-                <div class="theme-switch">☀️🌙</div>
-                <a href="menu.html" class="menu-link active">Menu ☕</a>
+             <!-- Правая часть: тема и кнопка меню -->
+            <div class="header-right">
+            <!-- Переключатель темы (солнце и луна) -->
+                <div class="theme-switch">
+                    <button class="theme-option active" aria-label="Light mode">
+                        <!-- Иконка солнца -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    </button>
+                    <button class="theme-option" aria-label="Dark mode">
+                        <!-- Иконка луны -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                </div>
+
+                <!-- Кнопка меню с чашечкой -->
+                <a href="menu.html" class="menu-link-btn">
+                    Menu
+                    <img src="Menu cup.svg" alt="Cup" class="menu-icon">
+                </a>
             </div>
         </nav>
     </header>
@@ -40,19 +55,32 @@
             
             <!-- Кнопки переключения категорий -->
             <div class="category-buttons">
-                <button class="cat-btn active">☕ Coffee</button>
-                <button class="cat-btn">🫖 Tea</button>
-                <button class="cat-btn">🍰 Dessert</button>
+
+                <button class="cat-btn active" data-category="coffee">
+                    <img src="cupofcoffee.png" alt="">
+                    Coffee
+                </button>
+
+                <button class="cat-btn" data-category="tea">
+                    <img src="teapot.png" alt="">
+                    Tea
+                </button>
+
+                <button class="cat-btn" data-category="dessert">
+                    <img src="cake.png" alt="">
+                    Dessert
+                </button>
+
             </div>
         </section>
 
         <!-- Сетка товаров (каталог кофе) -->
-        <section class="menu-catalog" id="coffee-section">
+        <section class="menu-catalog active" id="coffee-section">
             <div class="catalog-grid">
                 
                 <!-- Карточка 1: Irish coffee -->
-                <div class="menu-card">
-                    <img src="irish-coffee.jpg" alt="Irish coffee">
+                <div class="menu-card" data-category="coffee">
+                    <img src="coffee-1.jpg" alt="Irish coffee">
                     <div class="card-info">
                         <h3>Irish coffee</h3>
                         <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk.</p>
@@ -62,7 +90,7 @@
 
                 <!-- Карточка 2: Kahlua coffee -->
                 <div class="menu-card">
-                    <img src="kahlua-coffee.jpg" alt="Kahlua coffee">
+                    <img src="coffee-2.jpg" alt="Kahlua coffee">
                     <div class="card-info">
                         <h3>Kahlua coffee</h3>
                         <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk.</p>
@@ -72,7 +100,7 @@
 
                 <!-- Карточка 3: Honey raf -->
                 <div class="menu-card">
-                    <img src="honey-raf.jpg" alt="Honey raf">
+                    <img src="coffee-3.jpg" alt="Honey raf">
                     <div class="card-info">
                         <h3>Honey raf</h3>
                         <p>Espresso with frothed milk, cream and aromatic honey.</p>
@@ -82,7 +110,7 @@
 
                 <!-- Карточка 4: Ice cappuccino -->
                 <div class="menu-card">
-                    <img src="ice-cappuccino.jpg" alt="Ice cappuccino">
+                    <img src="coffee-4.jpg" alt="Ice cappuccino">
                     <div class="card-info">
                         <h3>Ice cappuccino</h3>
                         <p>Cappuccino with soft thick foam in summer version with ice.</p>
@@ -92,7 +120,7 @@
 
                 <!-- Карточка 5: Espresso -->
                 <div class="menu-card">
-                    <img src="espresso.jpg" alt="Espresso">
+                    <img src="coffee-5.jpg" alt="Espresso">
                     <div class="card-info">
                         <h3>Espresso</h3>
                         <p>Classic black coffee</p>
@@ -102,7 +130,7 @@
 
                 <!-- Карточка 6: Latte -->
                 <div class="menu-card">
-                    <img src="latte.jpg" alt="Latte">
+                    <img src="coffee-6.jpg" alt="Latte">
                     <div class="card-info">
                         <h3>Latte</h3>
                         <p>Espresso coffee with the addition of steamed milk and dense milk foam.</p>
@@ -112,7 +140,7 @@
 
                 <!-- Карточка 7: Latte macchiato -->
                 <div class="menu-card">
-                    <img src="latte-macchiato.jpg" alt="Latte macchiato">
+                    <img src="coffee-7.jpg" alt="Latte macchiato">
                     <div class="card-info">
                         <h3>Latte macchiato</h3>
                         <p>Espresso with frothed milk and chocolate.</p>
@@ -122,7 +150,7 @@
 
                 <!-- Карточка 8: Coffee with cognac -->
                 <div class="menu-card">
-                    <img src="coffee-with-cognac.jpg" alt="Coffee with cognac">
+                    <img src="coffee-8.jpg" alt="Coffee with cognac">
                     <div class="card-info">
                         <h3>Coffee with cognac</h3>
                         <p>Fragrant black coffee with cognac and whipped cream.</p>
@@ -132,6 +160,141 @@
 
             </div>
         </section>
+
+        <section class="menu-catalog hidden-category" data-category="tea">
+
+            <div class="catalog-grid">
+
+                <div class="menu-card">
+                    <img src="tea-1.jpg" alt="Moroccan">
+                <div class="card-info">
+                    <h3>Moroccan</h3>
+                    <p>Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint.</p>
+                    <span class="price">$4.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="tea-2.jpg" alt="Ginger">
+                <div class="card-info">
+                    <h3>Ginger</h3>
+                    <p>Original black tea with fresh ginger, lemon and honey.</p>
+                    <span class="price">$5.00</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="tea-3.jpg" alt="Cranberry">
+                <div class="card-info">
+                    <h3>Cranberry</h3>
+                    <p>Invigorating black tea with cranberry and honey.</p>
+                    <span class="price">$5.00</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="tea-4.jpg" alt="Sea buckthorn">
+                <div class="card-info">
+                    <h3>Sea buckthorn</h3>
+                    <p>Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon.</p>
+                    <span class="price">$5.50</span>
+                </div>
+            </div>
+
+        </div>
+
+        </section>
+
+        <section class="menu-catalog hidden-category" data-category="dessert"> /* категория десертов*/
+
+        <div class="catalog-grid">
+
+            <div class="menu-card">
+                <img src="dessert-1.jpg" alt="Marble cheesecake">
+                <div class="card-info">
+                    <h3>Marble cheesecake</h3>
+                    <p>Philadelphia cheese with lemon zest on a light sponge cake and red currant jam.</p>
+                    <span class="price">$3.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-2.jpg" alt="Red velvet">
+                <div class="card-info">
+                    <h3>Red velvet</h3>
+                    <p>Layer cake with cream cheese frosting.</p>
+                    <span class="price">$4.00</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-3.jpg" alt="Cheesecakes">
+                <div class="card-info">
+                    <h3>Cheesecakes</h3>
+                    <p>Soft cottage cheese pancakes with sour cream and fresh berries.</p>
+                    <span class="price">$4.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-4.jpg" alt="Creme brulee">
+                <div class="card-info">
+                    <h3>Creme brulee</h3>
+                    <p>Delicate creamy dessert in a caramel basket with wild berries.</p>
+                    <span class="price">$4.00</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-5.jpg" alt="Pancakes">
+                <div class="card-info">
+                    <h3>Pancakes</h3>
+                    <p>Tender pancakes with strawberry jam and fresh strawberries.</p>
+                    <span class="price">$4.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-6.jpg" alt="Honey cake">
+                <div class="card-info">
+                    <h3>Honey cake</h3>
+                    <p>Classic honey cake with delicate custard.</p>
+                    <span class="price">$4.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-7.jpg" alt="Chocolate cake">
+                <div class="card-info">
+                    <h3>Chocolate cake</h3>
+                    <p>Cake with hot chocolate filling and nuts.</p>
+                    <span class="price">$5.50</span>
+                </div>
+            </div>
+
+
+            <div class="menu-card">
+                <img src="dessert-8.jpg" alt="Black forest">
+                <div class="card-info">
+                    <h3>Black forest</h3>
+                    <p>A combination of thin sponge cake with cherry jam and light chocolate mousse.</p>
+                    <span class="price">$6.50</span>
+                </div>
+            </div>
+
+        </div>
+
+        </section>
+
     </main>
 
     <!-- Подвал сайта (Footer) -->
@@ -147,9 +310,22 @@
         </div>
         <div class="footer-right">
             <h3>Contact us</h3>
-            <p>📍 8558 Green Rd., LA</p>
-            <p>📞 +1 (603) 555-0123</p>
-            <p>🕒 Mon–Sat: 9:00–23:00</p>
+
+            <p>
+                <img src="pin-alt.svg" alt="">
+                8558 Green Rd., LA
+            </p>
+
+            <p>
+                <img src="phone.svg" alt="">
+                +1 (603) 555-0123
+            </p>
+
+            <p>
+                <img src="clock.svg" alt="">
+                Mon–Sat: 9:00–23:00
+            </p>
+
         </div>
     </footer>
 
