@@ -787,6 +787,16 @@ img {
     color: var(--footer-text);
 }
 
+/* Переключение категорий меню */
+
+.category-section {
+    display: none;
+}
+
+.category-section.active-category {
+    display: block;
+}
+
 /* ==========================
    MENU CATALOG
 ========================== */
