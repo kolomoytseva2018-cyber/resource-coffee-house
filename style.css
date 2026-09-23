@@ -797,6 +797,278 @@ img {
     display: block;
 }
 
+ /* =========================
+   PRODUCT MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.55);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+.modal.active {
+    display: flex;
+}
+
+
+
+.modal-content {
+
+    width: 800px;
+    min-height: 504px;
+
+    background: var(--bg-color);
+
+    border-radius: 30px;
+
+    padding: 24px;
+
+    display: flex;
+
+    gap: 32px;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Фото */
+
+.modal-image {
+
+    width: 310px;
+    height: 310px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+}
+
+
+
+/* Правая часть */
+
+.modal-info {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+
+
+/* Заголовок */
+
+.modal-title {
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    margin: 0 0 16px;
+
+}
+
+
+
+/* Описание */
+
+.modal-description {
+
+    font-size: 16px;
+
+    line-height: 1.4;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+/* Заголовки Size/Additives */
+
+.modal-option h4 {
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    margin: 0 0 12px;
+
+}
+
+
+
+/* кнопки выбора */
+
+.option-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.option-buttons button {
+
+    height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 100px;
+
+    border: 1px solid var(--border-primary);
+
+    background: transparent;
+
+    font-size: 16px;
+
+}
+
+
+
+.modal-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 32px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--border-primary);
+
+}
+
+.modal-note {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 16px;
+
+    font-size: 10px;
+
+    line-height: 140%;
+
+    color: var(--text-primary);
+
+}
+
+
+.modal-total span,
+.modal-price {
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* Close */
+
+.modal-close {
+
+    width: 438px;
+    max-width: 100%;
+
+    height: 44px;
+
+    margin-top: 24px;
+
+    align-self: center;
+
+
+    border-radius: 100px;
+
+    border: 1px solid var(--border-primary);
+
+    background: transparent;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+
+/* Адаптив */
+
+@media (max-width: 850px) {
+
+    .modal-content {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        width: 100%;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+    }
+
+
+    .modal-image {
+
+        width: 280px;
+
+        height: 280px;
+
+    }
+
+
+    .modal-close {
+
+        position: static;
+
+        transform: none;
+
+        margin-top: 24px;
+
+    }
+
+
+    .modal-total {
+
+        margin-bottom: 20px;
+
+    }
+
+}
 /* ==========================
    MENU CATALOG
 ========================== */
