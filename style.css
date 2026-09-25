@@ -182,7 +182,7 @@ img {
     position: relative;
     width: 100%;
     min-height: 640px;
-    background-image: url('img-hero.jpg');
+    background-image: url('assets/images/img-hero.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 40px;
@@ -285,9 +285,22 @@ img {
 }
 
 
-.store-btn img {
-    width: 200px;
-    height: auto;
+.store-btn {
+    display: block;
+}
+
+.store-btn .hover {
+    display: none;
+}
+
+
+.store-btn:hover .default {
+    display: none;
+}
+
+
+.store-btn:hover .hover {
+    display: block;
 }
 
 
