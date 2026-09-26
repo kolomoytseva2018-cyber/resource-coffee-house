@@ -151,7 +151,7 @@ img {
 }
 
 .menu-link-btn:hover {
-    color: var(--accent-color);
+    color: #403F3D;
 }
 
 .menu-link-btn::after {
@@ -161,12 +161,11 @@ img {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: #403F3D;
     transition: width 0.3s ease;
 }
-
 .menu-link-btn:hover::after {
-    width: 100%;
+    width:100%;
 }
 
 .menu-icon {
@@ -409,58 +408,99 @@ img {
 
 /* Верхняя ссылка в Hero-блоке Link (ведет себя как кнопка Menu в шапке с подчеркиванием) */
 .hero-link-top {
+
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #403F3D; /* Белый цвет на фоне картинки */
+    gap: 6px;
+
+    color: #403F3D;
+
     font-size: 16px;
     font-weight: 500;
-    position: relative;
+
+    text-decoration: none;
     margin-bottom: 20px;
-    transition: color 0.2s ease;
+    position: relative;
 }
 
-.hero-link-top:hover {
-    color: var(--accent-color);
+
+.hero-link-top img {
+
+    width: 16px;
+    height: 16px;
+
 }
+
 
 .hero-link-top::after {
-    content: '';
+
+    content: "";
+
     position: absolute;
-    bottom: -4px;
+
     left: 0;
+    bottom: -5px;
+
     width: 0;
     height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+
+    background-color: #403F3D;
+
+    transition: width .3s ease;
+
 }
+
 
 .hero-link-top:hover::after {
+
     width: 100%;
+
 }
 
-/* Большая кнопка Menu внизу Hero-блока (200x64px) */
+
+.hero-link-top:hover {
+
+    color: #403F3D;
+
+}
+
+/* Hero Menu button */
+
 .hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+
     width: 200px;
     height: 64px;
-    background-color: #E1D4C9; /* Цвет капсулы из макета */
-    color: #403F3D;
-    border-radius: 30px; /* Плавное скругление по краям */
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+
+    position: relative;
 }
 
-.hero-btn:hover {
-    background-color: #ffffff;
+
+.hero-btn img {
+    position: absolute;
+
+    width: 200px;
+    height: 64px;
+
+    left: 0;
+    top: 0;
+}
+
+
+.menu-hover {
+    opacity: 0;
+    transition: opacity .25s ease;
+}
+
+
+.hero-btn:hover .menu-default {
+    opacity: 0;
+}
+
+
+.hero-btn:hover .menu-hover {
     opacity: 1;
 }
-
 /* ==========================
    СЕКЦИЯ FAVORITE COFFEE (ФЛЕКС-СЛАЙДЕР)
    ========================== */
