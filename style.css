@@ -196,20 +196,45 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+
+    left: px;
+    top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     z-index: 2;
-    color: #ffffff;
-    max-width: 530px;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 105%;
+
+    color: #E1D4C9;
+
+    margin: 0px 0 110px;
+}
+
+.hero-content h1 .accent {
+    color: var(--accent-color);
+    font-style: italic;
 }
 
 .hero-subtitle {
-    display: inline-block;
-    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 1px;
+
     font-size: 16px;
 }
 
@@ -218,6 +243,27 @@ img {
     line-height: 1.05;
     font-weight: 600;
     margin: 0 0 40px 0;
+}
+
+/* Hero Menu button */
+.hero-btn {
+    display: block;
+
+    width: 200px;
+    height: 64px;
+
+}
+
+.hero-btn .menu-hover {
+    display: none;
+}
+
+.hero-btn:hover .menu-default {
+    display: none;
+}
+
+.hero-btn:hover .menu-hover {
+    display: block;
 }
 
 /* ==========================
@@ -419,15 +465,15 @@ img {
     font-weight: 500;
 
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
     position: relative;
 }
 
 
 .hero-link-top img {
 
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 
 }
 
@@ -532,13 +578,25 @@ img {
 }
 
 /* Карточка напитка */
+.coffee-slider {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+
 .coffee-card {
-    display: flex;
+    display: none;
+
     flex-direction: column;
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 500px;
+}
+
+
+.coffee-card.active {
+    display: flex;
 }
 
 .coffee-card img {

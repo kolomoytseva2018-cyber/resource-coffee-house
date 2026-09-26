@@ -70,19 +70,84 @@ productCards.forEach(card => {
 
 const closeButton = document.querySelector(".modal-close");
 
-closeButton.addEventListener("click", () => {
+if (closeButton) {
+    closeButton.addEventListener("click", () => {
 
-    modal.classList.remove("active");
+        modal.classList.remove("active");
 
-});
+    });
+}
 
 
 // Закрытие по клику на фон
 
-modal.addEventListener("click", (event) => {
+if (modal) {
+    modal.addEventListener("click", (event) => {
 
-    if (event.target === modal) {
-        modal.classList.remove("active");
+        if (event.target === modal) {
+            modal.classList.remove("active");
+        }
+
+    });
+}
+
+// =====================
+// Favorite Coffee Slider
+// =====================
+
+const coffeeCards = document.querySelectorAll(".coffee-card");
+const sliderBullets = document.querySelectorAll(".bullet");
+
+const nextSlide = document.querySelector(".slider-btn.next");
+const prevSlide = document.querySelector(".slider-btn.prev");
+
+let currentCoffee = 0;
+
+
+// показать слайд
+
+function showCoffee(index) {
+
+    coffeeCards.forEach(card => {
+        card.classList.remove("active");
+    });
+
+    sliderBullets.forEach(bullet => {
+        bullet.classList.remove("active");
+    });
+
+
+    coffeeCards[index].classList.add("active");
+    sliderBullets[index].classList.add("active");
+
+}
+
+
+// вперед
+
+nextSlide.addEventListener("click", () => {
+
+    currentCoffee++;
+
+    if (currentCoffee >= coffeeCards.length) {
+        currentCoffee = 0;
     }
+
+    showCoffee(currentCoffee);
+
+});
+
+
+// назад
+
+prevSlide.addEventListener("click", () => {
+
+    currentCoffee--;
+
+    if (currentCoffee < 0) {
+        currentCoffee = coffeeCards.length - 1;
+    }
+
+    showCoffee(currentCoffee);
 
 });
