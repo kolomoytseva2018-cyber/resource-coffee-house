@@ -151,3 +151,32 @@ prevSlide.addEventListener("click", () => {
     showCoffee(currentCoffee);
 
 });
+
+// =====================
+// Theme switch
+// =====================
+
+const themeOptions = document.querySelectorAll(".theme-option");
+
+themeOptions.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        // меняем активную кнопку
+        themeOptions.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        option.classList.add("active");
+
+
+        // переключаем тему
+        if (option.getAttribute("aria-label") === "Dark mode") {
+            document.body.classList.add("dark-theme");
+        } else {
+            document.body.classList.remove("dark-theme");
+        }
+
+    });
+
+});

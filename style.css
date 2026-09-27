@@ -29,6 +29,18 @@
     --footer-text: #E1D4C9;
 }
 
+.logo-dark {
+    display: none;
+}
+
+body.dark-theme .logo-light {
+    display: none;
+}
+
+body.dark-theme .logo-dark {
+    display: block;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -77,6 +89,23 @@ img {
 
 .logo img {
     height: 100px; 
+}
+
+/* Логотипы темы */
+
+.logo-light {
+    display: block;
+}
+
+.logo-dark {
+    display: none;
+}
+
+body.dark-theme .logo-light {
+    display: none;
+}
+
+body.dark-theme .logo-dark {
     display: block;
 }
 
